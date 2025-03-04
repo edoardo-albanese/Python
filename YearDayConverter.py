@@ -48,8 +48,12 @@ def convert_from_year(date):
         
         print(monthsId[month] + " the " + str(day))
 
-def convert_from_month():
-    pass
+def convert_from_month(day : int, month : int):
+    months_sum = day
+    months = month - 1
+    for i in range(months):
+        months_sum += Months[i + 1]
+    print("It's the " + str(months_sum) + " day of the year")
 
 
 
@@ -62,8 +66,15 @@ dateType =  create_input_var(
 
 
 if dateType == 1:
-    convert_from_month()
-if dateType == 2:
+    date = create_input_var(
+        "Insert your date with DD/MM format: ",
+        "You must insert two numbers separated by a slash!",
+        str
+    )
+    i = 0
+    day, month = map(int, date.split("/"))
+    convert_from_month(day, month)
+elif dateType == 2:
     date = create_input_var(
         "Insert your date in numbers: ",
         "You must insert a number!",
