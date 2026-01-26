@@ -1,35 +1,34 @@
 import turtle
-import random
+import math
 
 screen = turtle.Screen()
-screen.setup(420, 380)
-gurt = turtle.Turtle()
+screen.setup(1000,1000)
+screen.bgcolor("white")
 
-minside = 10
-maxside = 200
-amount = random.randint(0, 20)
+t=turtle.Turtle()
+t.speed(3)
+t.hideturtle()
+turtle.tracer(0)
 
-def rhombus(posx : int, posy : int):
-    gurt.goto(posx, posy)
-    gurt.pendown()
-    gurt.setheading(random.randint(0, 360))
-    side_a = random.randint(minside, maxside)
-    side_b = random.randint(minside, maxside)
-    sides = [side_a, side_b]
-    angle_a = random.randint(10, 170)
-    angle_b = 180 - angle_a
-    angles = [angle_a, angle_b]
-    for i in range(4):
-        gurt.forward(sides[i % 2])
-        gurt.right(angles[i % 2])
-    gurt.penup()
+def draw_rhombus(x, y, side, angle, rotation, color):
+    t.penup()
+    t.goto(x,y)
+    t.setheading(rotation)
+    t.pendown()
 
-gurt.penup()
-for i in range(amount):
-    posx = random.randint(0, int(screen.xscale))
-    posy = random.randint(0, int(screen.yscale))
-    print (posx, posy)
-    rhombus(posx, posy)
+    t.fillcolor(color)
+    t.begin_fill()
 
-
-turtle.done()
+    for j in range(2)
+    t.forward(side)
+    t.left(angle)
+    t.forward(side)
+    t.left(180-angle)
+    t.endfill()
+    t.penup()
+    for l in range(50):
+        x = random.uniform(-300,300)
+        y = random.uniform(-300,300)
+        side = random.uniform(40,120)
+        angle = random.uniform(30,150)
+        rotation = random.uniform
